@@ -1,5 +1,5 @@
 def call() {
     dir('selenium-tests') {
-        sh 'mvn clean install'
+        sh "${MAVEN_HOME}/bin/mvn clean install"
     }
 }
