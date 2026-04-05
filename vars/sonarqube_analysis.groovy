@@ -10,6 +10,7 @@ def call(String SonarQubeAPI, String Projectname, String ProjectKey) {
             -Dsonar.projectKey=${ProjectKey} \
             -Dsonar.sources=. \
             -Dsonar.java.binaries=selenium-tests/target/test-classes
+            -Dsonar.java.libraries=target/*.jar
             """
         }
     }
