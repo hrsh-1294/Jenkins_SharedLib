@@ -1,11 +1,16 @@
 def call(String SonarQubeAPI, String Projectname, String ProjectKey) {
 
-    nodejs('NodeJS') {  
+    def scannerHome = tool 'Sonar'
+
+    echo "Starting SonarQube analysis..."
+    echo "Scanner Home: ${scannerHome}"
+
+    nodejs('NodeJS') {
 
         withSonarQubeEnv("${SonarQubeAPI}") {
 
             sh """
-            ${SONAR_HOME}/bin/sonar-scanner \
+            ${scannerHome}/bin/sonar-scanner \
             -Dsonar.projectName=${Projectname} \
             -Dsonar.projectKey=${ProjectKey} \
             -Dsonar.sources=. \
