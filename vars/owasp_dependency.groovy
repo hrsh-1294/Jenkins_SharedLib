@@ -1,7 +1,7 @@
 def call() {
 
     dependencyCheck(
-        odcInstallation: 'OWASP-Dependency-Check',
+        odcInstallation: 'OWASP',
         additionalArguments: '--disableYarnAudit'
     )
 
